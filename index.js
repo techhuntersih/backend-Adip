@@ -5,7 +5,9 @@ var app=express();
 app.get('/',function(req,res){
      res.send('Helooworld !')
 })
-app.use(cors());
+app.use(cors({
+    origin : "https://frontend-adip-deployment.vercel.app"
+}));
 app.use(express.json())
 app.use("/api", require('./routes/routes'))
 // const connection =  sql.createPool({
