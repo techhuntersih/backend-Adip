@@ -1,5 +1,6 @@
 var express=require('express');
 var cors = require('cors')
+const PORT = process.env.PORT || 5000
 var app=express();
 app.get('/',function(req,res){
      res.send('Helooworld !')
@@ -40,6 +41,6 @@ app.use("/api", require('./routes/routes'))
 
 // }
 // )
-app.listen(5000,function(req,res){
+app.listen(PORT,function(req,res){
     console.log("server started");
 })
