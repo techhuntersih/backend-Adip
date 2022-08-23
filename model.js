@@ -12,6 +12,8 @@ var dbConnection = mysql.createPool({
 
 module.exports = {
     dbExecution: async function (query, argslist) {
+        console.log("db connection : ", dbConnection);
+        console.log("db url's : ", process.env.DATABASE_NAME, process.env.DATABASE_HOST, process.env.DATABASE_USERNAME, process.env.DATABASE_PORT, process.env.DATABASE_PASSWORD);
         return new Promise(function (resolve, reject) {
             dbConnection.getConnection(function(error, connection){
                 if(error) {
